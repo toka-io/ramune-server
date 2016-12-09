@@ -1,0 +1,32 @@
+/* diff2html override */
+.d2h-files-diff {
+    height: auto !important;
+}
+
+.d2h-file-side-diff {
+  overflow-x: auto !important;
+}
+
+.d2h-info {
+  background-color: #f4f7fb !important;
+}
+
+.d2h-diff-tbody {
+  overflow: visible !important;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+  font-size: 12px !important;
+  color: #333 !important;
+}
+
+.d2h-file-name {
+  font-size: 12px !important;
+}
+
+.d2h-file-list>li {
+  border-color: #eee !important;
+  padding: 7px 0px !important;
+}
+
+.d2h-file-stats {
+    font-size: 12px !important;
+}
