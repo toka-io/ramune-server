@@ -22,7 +22,10 @@ class CommitList extends React.Component {
   }
   render() {
     return (
-      <div className="commit-list">
+      <div className="commit">
+      <iframe src="/sample"></iframe>
+      </div>
+      /*<div className="commit-list">
         <div className="form">
           <div>
             <input type="text" name="task" placeholder="Add a new task" required="required" value={this.state.commit} onChange={this._setCommit} />
@@ -38,7 +41,7 @@ class CommitList extends React.Component {
         </ul>
         <p className="fade all-complete">All tasks have been completed.</p>
         <button onClick={this._resetList}>Reset</button>
-      </div>
+      </div> */
     );
   }
 }

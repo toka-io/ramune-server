@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "react": "^15.2.1",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "diff2html": "^2.0.11"
   }
 }
