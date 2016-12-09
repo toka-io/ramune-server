@@ -1,0 +1,34 @@
+{
+  "name": "ramune-server",
+  "version": "0.0.1",
+  "private": true,
+  "description": "ramune.toka.io",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run build && node ./bin/www",
+    "build": "minime -r && browserify public/react/src/home/index.jsx -o public/react/build/home/index.js -t [ babelify ]",
+    "preinstall": "npm prune",
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta3",
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "babelify": "^7.3.0",
+    "bower": "^1.7.9",
+    "browserify": "^13.1.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "minime": "^1.1.5"
+  }
+}

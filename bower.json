@@ -1,0 +1,23 @@
+{
+  "name": "ramune-server",
+  "version": "0.0.0",
+  "authors": [
+    "Andy Lim <arc@toka.io>"
+  ],
+  "description": "Chat platform",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.2.1",
+    "jquery": "^3.1.1"
+  }
+}

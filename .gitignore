@@ -1,0 +1,5 @@
+node_modules
+public/bower_components
+public/react/build
+public/css/dist
+public/js/dist

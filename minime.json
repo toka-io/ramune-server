@@ -1,0 +1,19 @@
+{
+  "js": [
+    {
+      "source": "",
+      "target": "",
+      "map": {
+      }
+    }
+  ],
+  "css": [
+    {
+      "source": "public/react/src/home",
+      "target": "public/react/build/home",
+      "map": {
+        "r.min.css": [ "r.css" ]
+      }
+    }
+  ]
+}
