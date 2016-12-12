@@ -12,7 +12,7 @@
       "source": "public/react/src/home",
       "target": "public/react/build/home",
       "map": {
-        "r.min.css": [ "r.css" ]
+        "r.min.css": [ "index.css", "DiffUI.css", "ShipIt.css", "TaskList.css" ]
       }
     }
   ]

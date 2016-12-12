@@ -1,3 +1,8 @@
-link(rel='stylesheet', href='/assets/css/diff2html.css')
+extends global/layout
 
-include sample.html
+block assets
+  title='Ramune Server'
+  link(rel='stylesheet', href='/assets/react/build/home/r.min.css')
+  
+block content
+  script(src='/assets//react/build/home/index.js')

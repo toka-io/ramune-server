@@ -1,7 +1,10 @@
+import React, { PropTypes } from 'react';
+
 class ShipIt extends React.Component {
   constructor(props) {
     super(props);
   }
+  
   componentDidMount() {
     $(".cta span").click(function(){
       $(".cta:not(.sent)").addClass("active");
@@ -25,6 +28,7 @@ class ShipIt extends React.Component {
         }
     });
   }
+  
   render() {
     return (
       <div className='centerMe'>

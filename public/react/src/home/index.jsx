@@ -1,10 +1,23 @@
-import CommitList from './CommitList.jsx';
+import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+
+import DiffUI from './DiffUI.jsx';
 import ShipIt from './ShipIt.jsx';
 
-var ReactDOM = require('react-dom');
+const propTypes = {
+  maxBubbles: PropTypes.number.isRequired
+};
 
-var Page = React.createClass({
-  componentDidMount: function() {
+const defaultProps = {
+  maxBubbles: 9
+};
+
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  componentDidMount() {
     $(".cta span").click(function(){
       $(".cta:not(.sent)").addClass("active");
       $("input").focus();
@@ -25,10 +38,14 @@ var Page = React.createClass({
             $(".cta span").text("Shipped :)");
             $(".cta").removeClass("active").addClass("sent");
         }
-    });
+    });  
+  }
   
-  },
-  render: function() {
+  render() {
+    var bubbles = [];
+    for (var i=0; i < this.props.maxBubbles; i++) {
+      bubbles.push(<li key={i}></li>);
+    }
     return (
       <div>
         <div className='wrapper'>
@@ -36,28 +53,17 @@ var Page = React.createClass({
                 <h1>Welcome to Ramune!</h1>
             </div>
             <ul className='bg-bubbles'>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+              {bubbles}
             </ul>
           </div>
-        <CommitList 
-          list={[
-              {'sha': '857cd3de2f127453faa0f7dfcb66e28d918abf57'},
-              {'sha': 'bee5ff9ff96e9a8439b6f14945e42b8ca73a38f3'}      
-          ]} 
-          />
+        <DiffUI />
         <ShipIt />
       </div> 
     )
   }
-});
+}
+
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
 
 ReactDOM.render(<Page />, document.body);
