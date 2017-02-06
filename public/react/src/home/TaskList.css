@@ -1,0 +1,329 @@
+/*
+ * @React("TaskList")
+ * http://codepen.io/hexagoncircle/pen/QydOQW
+ */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400);
+* {
+  box-sizing: border-box;
+}
+
+div.commit-list {
+  width: 100%;
+  max-width: 600px;
+  position: absolute;
+  margin-top: 320px;
+  margin-left: -300px;
+  left: 50%;
+  padding: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 20px 20px -12px;
+}
+
+.commit-list p {
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.commit-list .form > div {
+  display: block;
+  margin-bottom: 24px;
+}
+.commit-list .form > div input {
+  width: 100%;
+  margin-bottom: 6px;
+}
+@media (min-width: 440px) {
+  .commit-list .form > div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .commit-list .form > div input {
+    width: auto;
+    -webkit-box-flex: 2;
+    -webkit-flex-grow: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+    margin-right: 6px;
+    margin-bottom: 0;
+  }
+}
+
+.commit-list button {
+  padding: 12px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  background: #66B266;
+  color: white;
+  box-shadow: inset #3c763c 0 -2px 0;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  border-radius: 0;
+}
+.commit-list button:disabled {
+  background: #e6e6e6;
+  box-shadow: inset #d9d9d9 0 -2px 0;
+}
+.commit-list button:disabled:hover {
+  background: #e6e6e6;
+}
+.commit-list button:hover {
+  background: #55a955;
+}
+.commit-list button:active {
+  box-shadow: inset #448744 0 0 0;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.commit-list input {
+  padding: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid #ededed;
+  -webkit-transition: border 0.2s ease-out;
+  transition: border 0.2s ease-out;
+  border-radius: 0;
+  box-shadow: none;
+}
+.commit-list input.placeholder {
+  color: #d9d9d9;
+  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+.commit-list input:-moz-placeholder {
+  color: #d9d9d9;
+  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+.commit-list input::-moz-placeholder {
+  color: #d9d9d9;
+  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+.commit-list input::-webkit-input-placeholder {
+  color: #d9d9d9;
+  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+.commit-list input:focus {
+  border: 1px solid #66B266;
+}
+.commit-list input:focus.placeholder {
+  opacity: 0;
+  -webkit-transform: translateX(12px);
+          transform: translateX(12px);
+}
+.commit-list input:focus:-moz-placeholder {
+  opacity: 0;
+  transform: translateX(12px);
+}
+.commit-list input:focus::-moz-placeholder {
+  opacity: 0;
+  transform: translateX(12px);
+}
+.commit-list input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transform: translateX(12px);
+          transform: translateX(12px);
+}
+
+.commit-list input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: none;
+}
+.commit-list input[type="checkbox"] + label {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+  background: #bbddbb;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: inset #bbddbb 0 0 0 2px, inset white 0 0 0 4px;
+  -webkit-transition: box-shadow 0.1s ease-out;
+  transition: box-shadow 0.1s ease-out;
+}
+.commit-list input[type="checkbox"] + label:before {
+  width: 0;
+  height: 0;
+}
+.commit-list input[type="checkbox"] + label:after {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 3px;
+  height: 8px;
+  border-right: 3px solid white;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+.commit-list input[type="checkbox"] + label:hover {
+  box-shadow: inset #88c388 0 0 0 12px, inset white 0 0 0 12px;
+}
+.commit-list input[type="checkbox"] + label:hover:after {
+  opacity: 1;
+}
+.commit-list input[type="checkbox"]:checked + label {
+  background: transparent;
+  box-shadow: none;
+  -webkit-animation: bounce 0.4s linear;
+          animation: bounce 0.4s linear;
+}
+.commit-list input[type="checkbox"]:checked + label:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: #66B266;
+  border-radius: 100%;
+}
+.commit-list input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  border-bottom: 3px solid white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.commit-list ul {
+  margin: 0 0 24px;
+  border-top: 1px solid #ededed;
+  list-style: none;
+}
+.commit-list ul li {
+  color: #3c763c;
+  position: relative;
+  padding: 16px 24px 16px 0;
+  background: white;
+  border-bottom: 1px solid #ededed;
+  -webkit-transition: color 0.1s ease-out;
+  transition: color 0.1s ease-out;
+}
+.commit-list ul li span {
+  display: block;
+}
+
+.commit-list .completed {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  25% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  75% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  25% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  75% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.commit-list .fade, .fade span {
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+.commit-list .fade.all-complete, .fade span.all-complete {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+.commit-list .fade.ng-enter, .fade span.ng-enter {
+  opacity: 0;
+}
+.commit-list .fade.ng-enter.ng-enter-active, .fade span.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.commit-list .fade.ng-leave, .fade span.ng-leave {
+  opacity: 1;
+}
+.commit-list .fade.ng-leave span, .fade span.ng-leave span {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.commit-list .fade.ng-leave.ng-leave-active, .fade span.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.commit-list .fade.ng-leave.ng-leave-active span, .fade span.ng-leave.ng-leave-active span {
+  -webkit-transform: translateX(24px);
+          transform: translateX(24px);
+}
+.commit-list .fade.ng-hide, .fade span.ng-hide {
+  opacity: 0;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+.commit-list .fade.ng-show, .fade span.ng-show {
+  opacity: 1;
+}

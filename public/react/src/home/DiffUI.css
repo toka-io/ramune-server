@@ -1,0 +1,58 @@
+.DiffUI {
+  height: 1800px;
+  width: 100%;
+  max-width: 80%;
+  position: absolute;
+  margin-top: 325px;
+  margin-left: -40%;
+  left: 50%;
+  padding: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  background: white;
+  border-radius: 8px;
+  color: #000;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 20px 20px -12px;
+}
+
+/* diff2html override */
+.d2h-files-diff {
+    height: auto !important;
+}
+
+.d2h-file-side-diff {
+  overflow-x: hidden !important;
+}
+
+.d2h-info {
+  background-color: #f4f7fb !important;
+}
+
+.d2h-diff-tbody {
+  overflow: visible !important;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+  font-size: 12px !important;
+  color: #333 !important;
+}
+
+.d2h-file-name {
+  font-size: 12px !important;
+}
+
+.d2h-file-list .d2h-file-name {
+  font-size: 14px !important;
+}
+
+.d2h-file-list>li {
+  border-color: #eee !important;
+  padding: 7px 0px !important;
+}
+
+.d2h-file-stats {
+    font-size: 12px !important;
+}
+
+.d2h-tag {
+  display: none !important;
+}
